@@ -8,7 +8,15 @@ const rideDetails= {
     distance: '20km',
     unitKmPrice: 30
 }
-
+const calculateFare = (rideDetails) => {
+    const distance = parseInt(rideDetails.distance);
+    const unitKmPrice = parseInt(rideDetails.unitKmPrice);
+    const fare = distance * unitKmPrice;
+  
+    return fare;
+  }
+  const finalFare = calculateFare(rideDetails);
+  console.log(finalFare)
 
 
 //Q2 write a js function that checks if the object has status success or not
@@ -20,12 +28,15 @@ const status1 ={
 const status2 ={
     status: 'success'
 }
-const checkIfSucces=()=>{
-//write your code here
-}
+const checkIfSuccess = (statusObject) => {
+    if (statusObject.status === 'success') {
+      return true;
+    } else {
+      return false;
+    }
+  }
+  console.log(checkIfSuccess(status1))  //should return false
 
-checkIfSucces(status1)  //should return false
-
-checkIfSucces(status2)  //should return true
+  console.log(checkIfSuccess(status2))  //should return true
 
 

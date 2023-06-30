@@ -45,6 +45,8 @@ const myDetails = [
     {id:5, name: 'shyam'},
     {id:6, name: 'gopal'},
   ]
+const id = myDetails.map(item=>item.id)
+console.log(id)
   
 // return only array of ids: expected output  [3,5,6]
 
@@ -54,6 +56,12 @@ const userDetails= [
     {score: 0, name:'shyam', marks: [50,23,23]},
     {score: 0, name:'shyam',marks: [20,13,43]},
 ]
+userDetails.forEach((item => {
+  const totalScore = item.marks.reduce((a,b) => a + b, 0);
+  item.score = totalScore;
+}));
+
+console.log(userDetails);
 //loop over the arr of objects and calculate total score, expected output is:
 
 // [
