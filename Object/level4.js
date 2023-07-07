@@ -22,6 +22,11 @@ const userDetails={
 //     subjectCodes: ['M','S', 'G'],
 //     subjectScores: [23,35,30]
 // }
+const subjectcode = {
+    maths: 'M',
+    science: 'S',
+    gk: 'G'
+  };
 const userName = userDetails.name;
 const subjectCodes = Object.keys(userDetails).filter(key => key !== 'name').map(key => subjectcode[key]);
 const subjectScores = Object.values(userDetails).filter(value => typeof value === 'number');
